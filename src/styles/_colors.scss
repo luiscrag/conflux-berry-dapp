@@ -1,0 +1,16 @@
+html {
+    --bg: radial-gradient(
+      76.02% 75.41% at 1.84% 0%,
+      rgb(165, 35, 177) 0%,
+      rgb(2, 29, 67) 100%
+    )
+    0% 0% / contain;
+    --bg-secondary: rgb(4, 0, 46);
+    --text: white;
+    
+    --button: #1e3de4;
+    --button-hover: #611ee4;
+
+    --shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
