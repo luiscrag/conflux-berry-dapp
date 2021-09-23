@@ -7,11 +7,11 @@ import { Container } from "./Layout";
 import { getAccounts } from "../utils/ConfluxPortal";
 
 const Header = ({ title }) => {
-  const [userAddress, setUserAddress] = useState("Connect with Conflux Portal")
+  const [userAddress, setUserAddress] = useState("Connect with Conflux Portal");
 
   const getConfluxAccount = async () => {
     const accounts = await getAccounts();
-    setUserAddress(accounts[0])
+    setUserAddress(accounts[0]);
   };
 
   return (
@@ -26,6 +26,6 @@ const Header = ({ title }) => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-}
+};
 
 export default Header;
