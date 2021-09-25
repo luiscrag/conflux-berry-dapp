@@ -3,8 +3,10 @@ import "../styles/views/Home.scss";
 import { Container } from "../components/Layout";
 import InputBox from "../components/InputBox";
 import BFluxIcon from "../bflux-icon.png";
+import CfxICon from "../cfx-icon.png";
 import Banner from "../components/Banner";
 import PoolCard from "../components/PoolCard";
+
 
 const Home = () => (
   <div id="Home">
@@ -37,9 +39,8 @@ const Home = () => (
 
       <div>
         <Container>
-          <PoolCard coin="CFX" percent={100} />
-          <PoolCard coin="CFX" percent={100} />
-          <PoolCard coin="CFX" percent={100} />
+          <PoolCard stakedCoin="CFX" earnedCoin="BFLUX" icon={CfxICon} />
+          <PoolCard stakedCoin="BFLUX" earnedCoin="BFLUX" icon={BFluxIcon} />
         </Container>
       </div>
     </Container>

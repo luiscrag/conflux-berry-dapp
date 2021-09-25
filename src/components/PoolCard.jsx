@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "../styles/components/PoolCard.scss";
 
 import { RightArrow, DownArrow } from "./icons";
+import Button from "./Button";
 
-import BFluxIcon from "../bflux-icon.png";
 
-const PoolCard = ({ coin, percent }) => {
+const PoolCard = ({ stakedCoin, earnedCoin, icon }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -21,15 +21,29 @@ const PoolCard = ({ coin, percent }) => {
           )}
         </div>
         
-        <img src={BFluxIcon} alt="bflux-icon" width={35} height={35} />
+        <img src={icon} alt="bflux-icon" height={35} />
         
         <div className="CoinsLabel">
-          <span>Earn BFLUX</span>
-          <h3>Stake {coin}</h3>
+          <span>Earn {earnedCoin}</span>
+          <h3>Stake {stakedCoin}</h3>
         </div>
       </div>
       
       <div className={showDetails && "Show"} id="PoolDetails" >
+
+        <div className="PoolDetailsContent" style={{ display: showDetails ? 'flex' :'none' }}>
+
+          <div className="StakedSection">
+            <input className="stakedAmount" type="number" disabled value={50} />
+            <span>{stakedCoin} Staked Amount</span>
+          </div>
+
+          <div className="ActionSection">
+            <Button>Stake {stakedCoin}</Button>
+            <Button>Unstake {stakedCoin}</Button>
+          </div>
+          
+        </div>
 
       </div>
 
