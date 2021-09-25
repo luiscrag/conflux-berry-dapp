@@ -12,3 +12,9 @@
 #ActionButton:hover {
     background-color: var(--button-hover);
 }
+
+.Disabled {
+    background-color: var(--gray) !important;
+    color: var(--bg-secondary) !important;
+    cursor: no-drop !important; 
+}

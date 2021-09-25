@@ -39,8 +39,8 @@ const Home = () => (
 
       <div>
         <Container>
-          <PoolCard stakedCoin="CFX" earnedCoin="BFLUX" icon={CfxICon} />
-          <PoolCard stakedCoin="BFLUX" earnedCoin="BFLUX" icon={BFluxIcon} />
+          <PoolCard stakedCoin="CFX" earnedCoin="BFLUX" icon={CfxICon}  stakedAmount={0}/>
+          <PoolCard stakedCoin="BFLUX" earnedCoin="BFLUX" icon={BFluxIcon} stakedAmount={0} />
         </Container>
       </div>
     </Container>

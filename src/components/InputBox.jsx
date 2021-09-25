@@ -15,7 +15,7 @@ const InputBox = ({ children }) => {
       <div id="InputBoxWrapper">
         {children}
       </div>
-      <Button>Claim {pendingEarning.toString()} BFLUX</Button>
+      <Button disabled={pendingEarning <= 0} >Claim {pendingEarning.toString()} BFLUX</Button>
     </div>
   );
 };

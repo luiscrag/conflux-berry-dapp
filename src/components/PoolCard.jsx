@@ -5,7 +5,7 @@ import { RightArrow, DownArrow } from "./icons";
 import Button from "./Button";
 
 
-const PoolCard = ({ stakedCoin, earnedCoin, icon }) => {
+const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -34,13 +34,13 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon }) => {
         <div className="PoolDetailsContent" style={{ display: showDetails ? 'flex' :'none' }}>
 
           <div className="StakedSection">
-            <input className="stakedAmount" type="number" disabled value={50} />
+            <input className="stakedAmount" type="number" disabled value={stakedAmount} />
             <span>{stakedCoin} Staked Amount</span>
           </div>
 
           <div className="ActionSection">
             <Button>Stake {stakedCoin}</Button>
-            <Button>Unstake {stakedCoin}</Button>
+            <Button disabled={stakedAmount <= 0}>Unstake {stakedCoin}</Button>
           </div>
           
         </div>
