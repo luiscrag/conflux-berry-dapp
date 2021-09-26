@@ -7,7 +7,7 @@ const Button = ({ children, ...props }) => {
     <button
       onClick={action}
       id="ActionButton"
-      className={disabled && "Disabled"}
+      className={disabled ? "Disabled" : "None"}
     >
       {children}
     </button>

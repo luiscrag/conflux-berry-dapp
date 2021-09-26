@@ -42,7 +42,7 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount, balance }) => {
         </div>
       </div>
 
-      <div className={showDetails && "Show"} id="PoolDetails">
+      <div className={showDetails ? "Show" : "none"} id="PoolDetails">
         <div
           className="PoolDetailsContent"
           style={{ display: showDetails ? "flex" : "none" }}
