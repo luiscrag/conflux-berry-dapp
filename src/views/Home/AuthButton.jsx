@@ -17,7 +17,7 @@ const AuthButton = () => {
 
   return (
     <Button
-      action={!isLogged && auth}
+      action={!isLogged ? auth : () => null}
       initialIcon={
         !isLogged ? (
           <LockIcon fill="white" width={15} />
