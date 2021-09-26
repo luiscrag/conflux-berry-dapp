@@ -5,7 +5,7 @@
   color: white;
   cursor: pointer;
   outline: none;
-  padding: 6px 18px;
+  padding: 8px 16px;
   transition: background-color 0.3s linear;
 }
 
@@ -17,4 +17,14 @@
   background-color: var(--gray) !important;
   color: var(--bg-secondary) !important;
   cursor: no-drop !important;
+}
+
+.Flex {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  #Icon {
+    margin-right: 16px;
+  }
 }
