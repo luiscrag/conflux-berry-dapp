@@ -12,10 +12,10 @@ const InputBox = ({ children }) => {
 
   return (
     <div id="InputBox">
-      <div id="InputBoxWrapper">
-        {children}
-      </div>
-      <Button disabled={pendingEarning <= 0} >Claim {pendingEarning.toString()} BFLUX</Button>
+      <div id="InputBoxWrapper">{children}</div>
+      <Button disabled={pendingEarning <= 0}>
+        Claim {pendingEarning.toString()} BFLUX
+      </Button>
     </div>
   );
 };

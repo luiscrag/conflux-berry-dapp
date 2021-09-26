@@ -7,7 +7,6 @@ import CfxICon from "../cfx-icon.png";
 import Banner from "../components/Banner";
 import PoolCard from "../components/PoolCard";
 
-
 const Home = () => (
   <div id="Home">
     <Container>
@@ -39,8 +38,18 @@ const Home = () => (
 
       <div>
         <Container>
-          <PoolCard stakedCoin="CFX" earnedCoin="BFLUX" icon={CfxICon}  stakedAmount={0}/>
-          <PoolCard stakedCoin="BFLUX" earnedCoin="BFLUX" icon={BFluxIcon} stakedAmount={0} />
+          <PoolCard
+            stakedCoin="CFX"
+            earnedCoin="BFLUX"
+            icon={CfxICon}
+            stakedAmount={10}
+          />
+          <PoolCard
+            stakedCoin="BFLUX"
+            earnedCoin="BFLUX"
+            icon={BFluxIcon}
+            stakedAmount={10}
+          />
         </Container>
       </div>
     </Container>

@@ -1,75 +1,75 @@
 #PoolCard {
-    background-color: var(--bg-secondary);
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 
-    #PoolMain {
-        align-items: center;
-        border: 1px solid transparent;
-        display: flex;
-        padding: 16px;
-        transition: border 0.3s ease-in-out;
+  #PoolMain {
+    align-items: center;
+    border: 1px solid transparent;
+    display: flex;
+    padding: 16px;
+    transition: border 0.3s ease-in-out;
 
-        &:hover {
-            border: 1px solid var(--button);
-        }
-
-        img {
-            margin-right: 16px;
-        }
+    &:hover {
+      border: 1px solid var(--button);
     }
 
-    .CoinsLabel {
-        justify-items: center;
+    img {
+      margin-right: 16px;
+    }
+  }
+
+  .CoinsLabel {
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #PoolDetails {
+    background-color: var(--gray);
+    height: 0;
+    top: 100%;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+
+    .PoolDetailsContent {
+      align-items: center;
+      height: inherit;
+      justify-content: space-between;
+
+      .StakedSection {
         display: flex;
         flex-direction: column;
-    }
+        justify-content: initial;
+        margin-left: 16px;
 
-    #PoolDetails {
-        background-color: var(--gray);
-        height: 0;
-        top: 100%;
-        transition: all .2s ease-in-out;
-        width: 100%;
-
-        .PoolDetailsContent {
-            align-items: center;
-            height: inherit;
-            justify-content: space-between;
-
-            .StakedSection {
-                display: flex;
-                flex-direction: column;
-                justify-content: initial;
-                margin-left: 16px;
-
-                .stakedAmount {
-                    background-color: inherit;
-                    border: none;
-                    font-size: 40px;
-                }
-            }
-
-            .ActionSection {
-                padding-right: 32px;
-                
-                #ActionButton:first-of-type {
-                    margin-right: 16px;
-                }
-            }
+        .stakedAmount {
+          background-color: inherit;
+          border: none;
+          font-size: 40px;
         }
-    }
+      }
 
-    .Show {
-        height: 90px !important;
+      .ActionSection {
+        padding-right: 32px;
+
+        #ActionButton:first-of-type {
+          margin-right: 16px;
+        }
+      }
     }
+  }
+
+  .Show {
+    height: 90px !important;
+  }
 }

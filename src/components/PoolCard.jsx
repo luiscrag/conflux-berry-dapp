@@ -64,7 +64,7 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
                   <CardStaking
                     action="Stake"
                     currency={stakedCoin}
-                    balance={10}
+                    balance={stakedAmount}
                   />
                 )
               }
@@ -75,10 +75,7 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
               disabled={stakedAmount <= 0}
               action={() =>
                 onPresent(
-                  <CardStaking
-                    action="Unstake"
-                    currency={stakedCoin}
-                  />
+                  <CardStaking action="Unstake" currency={stakedCoin} balance={stakedAmount} />
                 )
               }
             >
