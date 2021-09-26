@@ -9,7 +9,10 @@ const CardStaking = ({ action, currency, balance, onDismiss  }) => {
   const [value, setValue] = useState(0)
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    const value = event.target.value;
+
+    if (value >= 0 && value <= balance)
+      setValue(event.target.value);
   }
 
   const setMax = () => {
