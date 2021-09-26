@@ -1,46 +1,26 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../../styles/views/Home.scss";
 import { Container } from "../../components/Layout";
-import BFluxIcon from "../../bflux-icon.png";
-import CfxICon from "../../cfx-icon.png";
-import Banner from "../../components/Banner";
-import PoolCard from "../../components/PoolCard";
-import { Context as BalanceContext } from "../../contexts/BalanceContext";
+import Header from "./Header";
+import PoolsBanner from "./PoolsBanner";
+import Pools from "./Pools";
+import { default as PoolData } from "../../data/Pools";
 
 const Home = () => {
-  const { cfxBalance } = useContext(BalanceContext);
-
   return (
     <div id="Home">
       <Container>
-        <Banner>
-          <Container>
-            <h3 className="Title">Berry Pools</h3>
-            <p className="Description">
+        <Header />
+        <PoolsBanner
+          title="Berry Pools"
+          description={
+            <>
               Best rewards on the Best Blockchain!
               <strong>Stake and win!</strong>
-            </p>
-          </Container>
-        </Banner>
-
-        <div>
-          <Container>
-            <PoolCard
-              stakedCoin="CFX"
-              earnedCoin="BFLUX"
-              icon={CfxICon}
-              stakedAmount={0}
-              balance={cfxBalance}
-            />
-            <PoolCard
-              stakedCoin="BFLUX"
-              earnedCoin="BFLUX"
-              icon={BFluxIcon}
-              stakedAmount={0}
-              balance={0}
-            />
-          </Container>
-        </div>
+            </>
+          }
+        />
+        <Pools data={PoolData} />
       </Container>
     </div>
   );

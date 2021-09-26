@@ -8,9 +8,6 @@ function App() {
   useEffect(() => {
     const isConflux = isConfluxInstalled();
 
-    // Network Version
-    const networkVersion = window.conflux.networkVersion
-    console.log(networkVersion);
   }, []);
 
   return (
