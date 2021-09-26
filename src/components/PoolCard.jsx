@@ -5,7 +5,7 @@ import Button from "./Button";
 import { Context } from "../contexts/ModalContext";
 import CardStaking from "../components/CardStaking";
 
-const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
+const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount, balance }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const { onPresent } = useContext(Context);
@@ -64,7 +64,7 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
                   <CardStaking
                     action="Stake"
                     currency={stakedCoin}
-                    balance={stakedAmount}
+                    balance={balance}
                   />
                 )
               }
@@ -75,7 +75,11 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount }) => {
               disabled={stakedAmount <= 0}
               action={() =>
                 onPresent(
-                  <CardStaking action="Unstake" currency={stakedCoin} balance={stakedAmount} />
+                  <CardStaking
+                    action="Unstake"
+                    currency={stakedCoin}
+                    balance={balance}
+                  />
                 )
               }
             >

@@ -6,16 +6,16 @@ import Button from "./Button";
 import Input from "./Input";
 
 const CardStaking = ({ action, currency, balance, onDismiss }) => {
-  const [value, setValue] = useState(0);
+  const [valueSelected, setValueSelected] = useState(0);
 
   const handleChange = (event) => {
     const value = event.target.value;
 
-    if (value >= 0 && value <= balance) setValue(event.target.value);
+    if (value >= 0 && value <= balance) setValueSelected(event.target.value);
   };
 
   const setMax = () => {
-    setValue(balance);
+    setValueSelected(balance);
   };
 
   return (
@@ -27,13 +27,13 @@ const CardStaking = ({ action, currency, balance, onDismiss }) => {
           <span>
             {currency} Balance: {balance.toString()}
           </span>
-          <Input type="number" value={value} onChange={handleChange} />
+          <Input type="number" value={valueSelected} onChange={handleChange} />
         </div>
         <Button action={setMax}>Max</Button>
       </div>
       <div className="ActionSection">
         <Button action={() => onDismiss()}>Cancel</Button>
-        <Button disabled={value <= 0}>{action}</Button>
+        <Button disabled={valueSelected <= 0}>{action}</Button>
       </div>
     </Card>
   );
