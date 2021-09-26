@@ -1,0 +1,44 @@
+#Card {
+    z-index: 2000;
+    h2, span, input {
+        color: var(--bg-secondary);
+    }
+    h2 {
+        font-size: 24px;
+    }
+
+    hr {
+        margin: 8px 0;
+    }
+
+    .HeaderCard {
+        align-items: center;
+        display: flex;
+        margin: 16px 0;
+        .BalanceWrapper {
+            align-items: initial;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+        }
+        #ActionButton {
+            align-self: flex-end;
+            margin-left: 16px;
+        }
+    }
+
+    .ActionSection {
+        display: flex;
+        justify-content: space-between;
+
+        #ActionButton:first-of-type {
+            background-color: rgb(170, 3, 3);
+            color: var(--text);
+
+            &:hover {
+                background-color: rgb(224, 3, 3);
+            }
+        }
+    }
+}
