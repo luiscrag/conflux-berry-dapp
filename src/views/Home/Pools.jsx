@@ -7,6 +7,7 @@ const Pools = ({ data }) => (
     <Container>
       {data.map((pool) => (
         <PoolCard
+          key={pool.stakedCoin}
           stakedCoin={pool.stakedCoin}
           earnedCoin={pool.earnedCoin}
           icon={pool.icon}
