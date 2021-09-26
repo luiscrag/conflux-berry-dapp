@@ -4,11 +4,15 @@ import { RightArrow, DownArrow } from "./icons";
 import Button from "./Button";
 import { Context } from "../contexts/ModalContext";
 import CardStaking from "../components/CardStaking";
+import { Context as UserContext } from "../contexts/UserContext";
+import AuthButton from "../views/Home/AuthButton";
 
 const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount, balance }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const { onPresent } = useContext(Context);
+
+  const { isLogged } = useContext(UserContext);
 
   return (
     <div id="PoolCard">
@@ -45,47 +49,53 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount, balance }) => {
       <div className={showDetails ? "Show" : "none"} id="PoolDetails">
         <div
           className="PoolDetailsContent"
-          style={{ display: showDetails ? "flex" : "none" }}
+          style={{ display: showDetails ? "flex" : "none", justifyContent: !isLogged && "center" }}
         >
-          <div className="StakedSection">
-            <input
-              className="stakedAmount"
-              type="number"
-              disabled
-              value={stakedAmount}
-            />
-            <span>{stakedCoin} Staked Amount</span>
-          </div>
+          {!isLogged ? (
+            <AuthButton />
+          ) : (
+            <>
+              <div className="StakedSection">
+                <input
+                  className="stakedAmount"
+                  type="number"
+                  disabled
+                  value={stakedAmount}
+                />
+                <span>{stakedCoin} Staked Amount</span>
+              </div>
 
-          <div className="ActionSection">
-            <Button
-              action={() =>
-                onPresent(
-                  <CardStaking
-                    action="Stake"
-                    currency={stakedCoin}
-                    balance={balance}
-                  />
-                )
-              }
-            >
-              Stake {stakedCoin}
-            </Button>
-            <Button
-              disabled={stakedAmount <= 0}
-              action={() =>
-                onPresent(
-                  <CardStaking
-                    action="Unstake"
-                    currency={stakedCoin}
-                    balance={balance}
-                  />
-                )
-              }
-            >
-              Unstake {stakedCoin}
-            </Button>
-          </div>
+              <div className="ActionSection">
+                <Button
+                  action={() =>
+                    onPresent(
+                      <CardStaking
+                        action="Stake"
+                        currency={stakedCoin}
+                        balance={balance}
+                      />
+                    )
+                  }
+                >
+                  Stake {stakedCoin}
+                </Button>
+                <Button
+                  disabled={stakedAmount <= 0}
+                  action={() =>
+                    onPresent(
+                      <CardStaking
+                        action="Unstake"
+                        currency={stakedCoin}
+                        balance={balance}
+                      />
+                    )
+                  }
+                >
+                  Unstake {stakedCoin}
+                </Button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
