@@ -4,14 +4,17 @@ import "../styles/components/Header.scss";
 import Button from "./Button";
 import { Container } from "./Layout";
 
-import { getAccounts } from "../utils/ConfluxPortal";
+import { getAccounts, isConflux } from "../utils/ConfluxPortal";
 
 const Header = ({ title }) => {
   const [userAddress, setUserAddress] = useState("Connect with Conflux Portal");
 
   const getConfluxAccount = async () => {
-    const accounts = await getAccounts();
-    setUserAddress(accounts[0]);
+    const conflux = isConflux();
+    if (conflux) {
+      const accounts = await getAccounts();
+      setUserAddress(accounts[0]);
+    }
   };
 
   return (
