@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
 import { Home } from "./views";
 import { isConfluxInstalled } from "./utils/ConfluxPortal";
 
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <>
-      <Header address="0x0" />
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
