@@ -4,15 +4,21 @@ import Button from "../../components/Button";
 import { Hashicon } from "@emeraldpay/hashicon-react";
 import { LockIcon } from "../../components/icons";
 
-import { getAccount } from "../../utils/ConfluxPortal";
+import { getAccount, getBalances } from "../../utils/ConfluxPortal";
 import { Context as UserContext } from "../../contexts/UserContext";
+import { Context as BalanceContext } from "../../contexts/BalanceContext";
 
 const AuthButton = () => {
   const { cfxAddress, isLogged, updateCfxAddress } = useContext(UserContext);
+  const { updateBalance } = useContext(BalanceContext);
 
   const auth = async () => {
     const account = await getAccount();
     updateCfxAddress(account);
+
+    // Get Balances
+    const balances = await getBalances(account);
+    updateBalance(balances);
   };
 
   return (

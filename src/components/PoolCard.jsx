@@ -67,28 +67,29 @@ const PoolCard = ({ stakedCoin, earnedCoin, icon, stakedAmount, balance }) => {
 
               <div className="ActionSection">
                 <Button
-                  action={() =>
+                  disabled={balance <= 0}
+                  action={balance > 0 ? () =>
                     onPresent(
                       <CardStaking
                         action="Stake"
                         currency={stakedCoin}
-                        balance={balance}
+                        balance={balance / 1000000000000000000}
                       />
-                    )
-                  }
+                    ) : () => null
+                  } 
                 >
                   Stake {stakedCoin}
                 </Button>
                 <Button
                   disabled={stakedAmount <= 0}
-                  action={() =>
+                  action={stakedAmount > 0 ? () =>
                     onPresent(
                       <CardStaking
                         action="Unstake"
                         currency={stakedCoin}
-                        balance={balance}
+                        balance={stakedAmount}
                       />
-                    )
+                    ): () => null
                   }
                 >
                   Unstake {stakedCoin}

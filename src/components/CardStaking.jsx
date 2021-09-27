@@ -20,8 +20,9 @@ const CardStaking = ({ action, currency, balance, onDismiss }) => {
 
   return (
     <Card>
-      <h2>{action + ' ' + currency}</h2>
+      <h2>{action + ' ' + currency}</h2>}
       <hr />
+      
       <div className="HeaderCard">
         <div className="BalanceWrapper">
           <span>
